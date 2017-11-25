@@ -1,0 +1,27 @@
+{
+  "name": "word-counter",
+  "version": "1.0.0",
+  "description": "Word Counter",
+  "main": "build/word-counter.js",
+  "module": "index",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atassani/word-counter.git"
+  },
+  "scripts": {
+    "pretest": "rimraf build && mkdir build && rollup -c -f umd -n wordCounter -o build/word-counter.js -- src/index.js",
+    "test": "tape 'test/**/*-test.js'",
+    "start": "browser-sync start --directory --server --port 8080 --files '*.css, **/*.html, build/**/*.js'"
+  },
+  "author": "Toni Tassani <toni.tassani@edreamsodigeo.com>",
+  "license": "0BSD",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.43.0",
+    "tape": "^4.7.0"
+  }
+}
